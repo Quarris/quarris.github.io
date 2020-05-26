@@ -1,81 +1,228 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="commisions.css">
 <html>
-<head>
-<title>Minecraft Commissions</title>
-</head>
+    <head>
+        <title>Minecraft Commissions</title>
+    </head>
 
-<body>
-TL;DR<br>
--------------------------------<br>
-- Forge mods ONLY for latest moddable MC verion (ask for other versions)<br>
-- Payrate: around 10 GBP/h based on traffic and mod<br>
-	- An additional 30 GBP if you don't want QLib as a dependency mod (unless the mod is small)<br>
-- Work time estimation for the final cost is set before the commision<br>
-- Final code is to be made open-source the the rights are transfered to you<br>
-<br>
-<br>
-Commission Requirements<br>
---------------------------------<br>
-I write NEW mods for the latest version of moddable minecraft (though I might consider a slightly earlier version if you ask).<br>
-I only use Minecraft Forge for my mods.<br>
-<br>
-All my mods use a dependency mod called QLib. This is a library mod which makes my life easier when creating mods.<br>
-Depending on the size of them mod, I may charge an extra fee if you do not want QLib to be a dependency (see Payrate)<br>
-<br>
-Once the commission is completed, I will continue to provide bug fixes for free for at least a year after release, and then until the latest moddable <br>minecraft version updates.<br>
-Any additional features will be at an extra charge based on the time to add the feature (as if it was already part of the commission)<br>
-Minecraft Version ports will be at an extra charge based on the amount of effort in porting the mod. In rare cases this could mean rewriting the entire mod.<br>
-<br>
-<br>
-Payrate<br>
---------------------------------<br>
-The payrate how much I charge per hour of work time.<br>
-My base payrate is 10 GBP per hour, that's about 12-13 USD per hour.<br>
-I will use this rate for most of the times unless there are a lot of commissions active, I am busy, or the commission is difficult.<br>
-The payrate will not change for active commissions, once the price is set, it will not increase without consulting you.<br>
-This base payrate may change in the future, so check everytime before commissions.<br>
-<br>
-I charge an extra 30 GBP if you wish for me to NOT use QLib (unless the mod is small). This is because it makes my life easier when I use it. This extra charge will change over time as I add more updates to QLib.<br>
-<br>
-<br>
-Work Time<br>
---------------------------------<br>
-Work time is the amount of time I will work on the project.<br>
-This is NOT the ETA for how long the project will take;<br>
-this is an estimation of the raw hours that I will have to work in order to complete the project.<br>
-I will use this estimation with the payrate to calculate the final cost of the commission.<br>
-<br>
-I will work out an estimation and let you know about the final cost before the commission begins.<br>
-<br>
-I will update this section with average times to create various things like blocks, items, entities, dimensions etc. so that you can estimate the cost of the commission.<br>
-<br>
-<br>
-Payment methods<br>
-----------------------------------<br>
-There are 3 payment methods that you can choose from for the commission:<br>
-1) You are weird and you decide to pay me everything at once,<br>
-2) The payments are split 50/50, first at the very start of the project, and last at the very end of the project<br>
-3) We establish milestones for the features requested, and you pay me the established amount before the start of the next milestone.<br>
-<br>
-As for actual transactions I only accept paypal.<br>
-<br>
-<br>
-Code Rights<br>
--------------------------------<br>
-The code will remain closed-source under my rights UNTIL the commission has been completed and the all the payments have been made.<br>
-At that point the project is to be made (AND REMAINED) open-source and all rights are transfered to you.<br>
-<br>
-<br>
-Refunds<br>
---------------------------------<br>
-There are two cases for refunds: I cancel the commission, or you cancel the commission.<br>
-<br>
-If I cancel the commission, all the payments that were made so far will be refunded in full, and the code will remain with me with full permissions belonging to me.<br>
-If by any chance you want to own the currently written code, then we will consult on the percentage of that payment which I will keep, and the code in the current state is released to you, as long as it stays open-source.<br>
-<br>
-If you cancel the commission, I will consult with you on the amount of work I have put in, I get to keep the percentage of the payments we agreed on and the code in the current state is released to you.<br>
-If, on the other hand, we did not manage to agree on the percentage, I have the right to retain any payments that have been completed so far as well as the rights to the entire code will remain with me.<br>
-Higher chances are that we will agree on something, I am not that scary.<br>
-</body>
+    <body>
+        <div id="toc_container">
+            <p id="toc_title">
+                <b><u>Contents</u></b>
+            </p>
+            <ol>
+                <li><a href="#TLDR">TL;DR</a></li>
+                <li><a href="#Requirements">Requirements</a></li>
+                <li><a href="#Payrate">Payrate</a></li>
+                <li><a href="#Time">Work Time</a></li>
+                <li><a href="#Methods">Payment Methods</a></li>
+                <li><a href="#Rights">Code Rights</a></li>
+                <li><a href="#Refunds">Refunds</a></li>
+            </ol>
+        </div>
 
+        <h2 id="TLDR">TL;DR</h2>
+        <hr />
+        <ul>
+            <li>
+                Forge mods <b class="important">ONLY</b> for latest moddable MC
+                verion (ask for other versions)
+            </li>
+            <li>
+                Payrate: around <b class="important">10 GBP/h</b> based on
+                traffic and mod
+            </li>
+            <li>
+                An additional <b class="important">30 GBP</b> if you don't want
+                QLib as a dependency mod (unless the mod is small)
+            </li>
+            <li>
+                Work time estimation for the final cost is set before the
+                commision
+            </li>
+            <li>
+                Final code is to be made open-source and the rights are
+                transfered to you
+            </li>
+        </ul>
+
+        <h2 id="Requirements">Commission Requirements</h2>
+        <hr />
+        <ul>
+            <li>
+                I write NEW mods for the latest version of moddable minecraft
+                (though I might consider a slightly earlier version if you ask).
+            </li>
+            <li>I only use Minecraft Forge for my mods.</li>
+        </ul>
+        <ul>
+            <li>
+                All my mods use a dependency mod called QLib. This is a library
+                mod which makes my life easier when creating mods.
+            </li>
+            <li>
+                Depending on the size of the mod, I may charge an extra fee if
+                you do not want QLib to be a dependency (see
+                <a href="#Payrate">Payrate</a>)
+            </li>
+        </ul>
+        <br />
+        <ul>
+            <li>
+                Once the commission is completed, I will continue to provide bug
+                fixes for free for at least a year after release, and then until
+                the latest moddable minecraft version updates.
+            </li>
+            <li>
+                Any additional features will be at an extra charge based on the
+                time to add the feature (as if it was already part of the
+                commission)
+            </li>
+            <li>
+                Minecraft Version ports will be at an extra charge based on the
+                amount of effort in porting the mod.<br />
+                <small class="important">
+                    In rare cases this could mean rewriting the entire mod.
+                </small>
+            </li>
+        </ul>
+
+        <h2 id="Payrate">Payrate</h2>
+        <hr />
+        <ul>
+            <li>The payrate how much I charge per hour of work time.</li>
+            <li>
+                My base payrate is <b class="important">10 GBP</b> per hour,
+                that's about <b class="important">12-13 USD</b> per hour.
+            </li>
+            <li>
+                I will use this rate for most of the times unless there are a
+                lot of commissions active, I am busy, or the commission is
+                difficult.
+            </li>
+            <li>
+                The payrate will not change for active commissions, once the
+                price is set, it will not increase without consulting you.
+            </li>
+            <li>
+                This base payrate may change in the future, so check everytime
+                before commissions.
+            </li>
+            <li>
+                I charge an extra <b class="important">30 GBP</b> if you wish
+                for me to NOT use QLib (unless the mod is small).<br />
+                <small>
+                    This is because it makes my life easier when I use it. This
+                    extra charge will change over time as I add more updates to
+                    QLib.
+                </small>
+            </li>
+        </ul>
+
+        <h2 id="Time">Work Time</h2>
+        <hr />
+
+        <ul>
+            <li>
+                Work time is the amount of time I will work on the project.<br />
+                This is NOT the ETA for how long the project will take;
+            </li>
+            <li>
+                this is an estimation of the raw hours that I will have to work
+                in order to complete the project.
+            </li>
+            <li>
+                I will use this estimation with the payrate to calculate the
+                final cost of the commission.
+            </li>
+            <li>
+                I will work out an estimation and let you know about the final
+                cost before the commission begins.
+            </li>
+            <li>
+                I will update this section with average times to create various
+                things like blocks, items, entities, dimensions etc. so that you
+                can estimate the cost of the commission.
+            </li>
+        </ul>
+
+        <h2 id="Methods">Payment Methods</h2>
+        <hr />
+        <p>
+            <b>
+                There are 3 payment methods that you can choose from for the
+                commission:
+            </b>
+        </p>
+        <ol>
+            <li>
+                You are weird and you decide to pay me everything at once.
+            </li>
+            <li>
+                The payments are split 50/50, first at the very start of the
+                project, and last at the very end of the project.
+            </li>
+            <li>
+                We establish milestones for the features requested, and you pay
+                me the established amount before the start of the next
+                milestone.
+            </li>
+        </ol>
+        <b class="important">
+            As for actual transactions I only accept paypal.
+        </b>
+
+        <h2 id="Rights">Code Rights</h2>
+        <hr />
+        <p>
+            The code will remain closed-source under my rights
+            <b class="important">UNTIL</b> the commission has been completed and
+            the all the payments have been made.<br />
+            At that point the project is to be made
+            <b class="important">(AND REMAINED)</b> open-source and all rights
+            are transfered to you.
+        </p>
+
+        <h2 id="Refunds">Refunds</h2>
+        <hr />
+        <p>
+            <b>
+                There are two cases for refunds: I cancel the commission, or you
+                cancel the commission.
+            </b>
+        </p>
+        <ul>
+            <li>
+                If I cancel the commission, all the payments that were made so
+                far will be refunded in full, and the code will remain with me
+                with full permissions belonging to me.
+            </li>
+            <li>
+                If by any chance you want to own the currently written code,<br />then
+                we will consult on the percentage of that payment which I will
+                keep,<br />and the code in the current state is released to you,
+                as long as it stays open-source.
+            </li>
+        </ul>
+        <ul>
+            <li>
+                If you cancel the commission, I will consult with you on the
+                amount of work I have put in, I get to keep the percentage of
+                the payments we agreed on and the code in the current state is
+                released to you.
+            </li>
+            <li>
+                If, on the other hand, we did not manage to agree on the
+                percentage, I have the right to retain any payments that have
+                been completed so far as well as the rights to the entire code
+                will remain with me.
+            </li>
+        </ul>
+        <p class="important">
+            <b>
+                Higher chances are that we will agree on something, I am not
+                that scary.
+            </b>
+        </p>
+    </body>
 </html>
