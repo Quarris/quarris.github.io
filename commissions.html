@@ -1,239 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Quarris' Little Corner</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    html, body {
-        height: 100%;
-    }
-    
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {
-        height: 1900px
-    }
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-      width: 100%;
-      position: fixed;
-      bottom: 0
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
+    <title>Quarris' Little Corner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.html">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="navigation">
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li class="disabled"><a>Projects</a></li>
-        <li class="active"><a href="commissions.html">Commissions</a></li>
-        <li class="disabled"><a>About</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
-<div class="container-fluid text-center" style="padding-bottom: 50px">
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="https://www.twitch.tv/quarris">Twitch</a></p>
-      <p><a href="https://www.twitter.com/quarris123">Twitter</a></p>
-      <p><a href="https://www.youtube.com/user/MrQuarris">Youtube</a></p>
-    </div>
-    <div class="col-sm-8 text-left">
-        
-        <div id="intro">
-            <h2 class="page-header">Modding Commissions</h2>
-            <p><b>Type:</b> Forge Mod Loader (FML)</p>
-            <p><b>Minecraft Version:</b> 1.15.2 (Ask for older versions)</p>
-            <p><b>Cost:</b> Around &#163;10 per hour of work time</p>
-            <p><b>Work Time:</b> Estimated amount of time spent writing the mod (used for calculating the final cost)</p>
-            <p><b>Payment Method:</b> Paypal</p>
-            <p><b>Source Code:</b> To be made and remain open-source upon release (GPL3)</p>
-            <p><b>Dependencies:</b></p>
-            <ul>
-                <li>The commission will have to contain the QLib dependency (1.15.2+) which is a library mod I am developing.</li>
-                <li>A fixed charge of &#163;30 will be applied if it is requested to not be used (unless the mod is small enough or below version 1.15.2)</li>
-                <li>Ask about the exclusion of QLib and I will provide the details</li>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="index.html">Home</a></li>
+                <li class=""><a href="projects.html">Projects</a></li>
+                <li class="active"><a href="commissions.html">Commissions</a></li>
+                <li class="disabled"><a>About</a></li>
             </ul>
         </div>
-        <br>
-        <div>
-            <h2 class="page-header">Commission Requirements</h2>    
-            <p>I write mods for the latest version of moddable Minecraft for the Forge Mod Loader.
-            If you would like an earlier version then feel free to ask, however depending on the size of the mod I may refuse or charge extra.
-            I am most comfortable with versions 1.12.2 and 1.14.4 as additional versions, however I much more prefer to use the latest moddable version.</p>
-            <p>I create mods using QLib. It is a library mod I am developing for 1.15.2+ which allows me to write mods easier. Exclusion of QLib will come at an extra cost of &#163;30
+    </div>
+</nav>
+
+<div class="container text-left rounded" id="main">
+
+    <div id="intro">
+        <h2 class="page-header">Modding Commissions</h2>
+        <p><b>Type:</b> Forge Mod Loader (FML)</p>
+        <p><b>Minecraft Version:</b> 1.15.2 (Ask for older versions)</p>
+        <p><b>Cost:</b> &#163;15 per hour of work time</p>
+        <p><b>Work Time:</b> Estimated amount of time spent writing the mod (used for calculating the final cost)</p>
+        <p><b>Payment Method:</b> Paypal</p>
+        <p><b>Source Code:</b> To be made and remain open-source upon release (GPL3)</p>
+        <p><b>Resources:</b> I am not responsible for textures/models required for the commission</p>
+        <!--
+        <p><b>Dependencies:</b></p>
+        <ul>
+            <li>The commission will have to contain the QLib dependency (1.15.2+) which is a library mod I am developing.</li>
+            <li>A fixed charge of &#163;30 will be applied if it is requested to not be used (unless the mod is small enough or below version 1.15.2)</li>
+            <li>Ask about the exclusion of QLib and I will provide the details</li>
+        </ul>
+        -->
+    </div>
+    <br>
+    <div>
+        <h2 class="page-header">Commission Requirements</h2>
+        <p>I write <b>Forge</b> Mods for the latest version of moddable Minecraft in a released stage.</p>
+        <p>If you would like an earlier version then feel free to ask, however depending on the size of the mod I may
+            refuse or charge extra.
+            I am most comfortable with versions 1.12.2 as additional versions, however I much more prefer to use the
+            latest moddable version.</p>
+        <p>I am not responsible for creating or updating any textures and/or models required for the commission. I am not an artist/modelerer and any textures/models I make are purely for development purposes, which may be used in the release if you wish.</p>
+        <!--
+        <p>I create mods using QLib. It is a library mod I am developing for 1.15.2+ which allows me to write mods easier. Exclusion of QLib will come at an extra cost of &#163;30
             I may choose not to include QLib if the commission is small enough or below 1.15.2+</p>
-        </div>
+            -->
+    </div>
 
+    <div>
+        <h2 class="page-header">Maintains and Updates</h2>
+        <p>Once the commission is completed, I will continue to provide bug fixes for free for 6 months after release,
+            and then until the latest moddable minecraft version updates.</p>
+        <p>Any additional features will be at an extra charge based on the time to add the feature (as if it was already
+            part of the commission)</p>
+        <p>Minecraft Version ports will be at an extra charge based on the amount of work time needed to port the
+            mod.
+            <b>In rare cases this could mean rewriting the entire mod.</b></p>
+    </div>
+
+    <div>
+        <h2 class="page-header">Worktime and Payrate</h2>
         <div>
-            <h2 class="page-header">Maintains and Updates</h2>    
-            <p>Once the commission is completed, I will continue to provide bug fixes for free for at least a year after release, and then until the latest moddable minecraft version updates.</p>
-            <p>Any additional features will be at an extra charge based on the time to add the feature (as if it was already part of the commission)</p>
-            <p>Minecraft Version ports will be at an extra charge based on the amount of effort in porting the mod.
-                <small><b>In rare cases this could mean rewriting the entire mod.</b></small>
-            </p>
-        </div>
-        
-        <div>
-            <h2 class="page-header">Worktime and Payrate</h2>
-            <div>
-                <h3>Payrate</h3>
-                <p>The payrate is how much I charge per hour of work time.</p>
-                <p>
-                    My base payrate is <b>&#163;10</b> per hour,
-                    that's about <b>12&#36;-13&#36;</b> per hour.
-                </p>
-                <p>
-                    I will use this rate for most of the times unless there are a
-                    lot of commissions active, I am busy, or the commission is
-                    difficult.
-                </p>
-                <p>
-                    The payrate will not change for active commissions, once the
-                    price is set, it will not increase without consulting you.
-                </p>
-                <p>
-                    I charge an extra <b>&#163;30</b> if you wish
-                    for me to NOT use QLib (unless the mod is small).
-                    <br>
-                    Consult me if you wish to not use QLib and I will let you know if I would charge you.
-                </p>
-            </div>
-            
-            <div>
-                <h3>Worktime</h3>
-                <p>
-                    Worktime is NOT the ETA for how long the project will take.
-                    This is an estimation of the total raw hours that I will have
-                    put in order to complete the project.
-                </p>
-                <p>
-                    I will use this estimation with the payrate to calculate the
-                    final cost of the commission.
-                </p>
-                <p>
-                    I will work out an estimation and let you know about the final
-                    cost before the commission begins.
-                </p>
-            </div>
-        </div>
-        
-        <div>
-            <h2 class="page-header">Charge Methods</h2>
-            <p><b>All-In:</b> You are weird and you decide to pay me everything at once.</p>
-            <p><b>50/50:</b> The payments are split 50/50, first at the very start of the project,
-                and last at the very end of the project.</p>
-            <p><b>Milestones:</b> We establish milestones for the features requested, and you pay
-                me the established amount before the start of the next milestone.</p>
-        </div>
-        
-        <div>
-            <h2 class="page-header">Refunds and Code Rights</h2>
-            
-            <div>
-                <h3>Refunds</h3>
-                <p><b>I cancel commission:</b></p>
-                <p>
-                    If I cancel the commission, all the payments that were made so
-                    far will be refunded in full, and the code will remain with me
-                    with full permissions belonging to me.
-                </p>
-                <p>
-                    If by any chance you want to own the currently written code, then
-                    we will consult on the percentage of that payment which I will
-                    keep, and the code in the current state is released to you,
-                    as long as it stays open-source.
-                </p>
+            <h3>Payrate</h3>
+            <p>The payrate is how much I charge per hour of work time.</p>
+            <p>My base payrate is <b>&#163;15</b> per hour,
+                that's about <b>19&#36;-21&#36;</b> per hour.</p>
+            <p>I will use this rate for most of the times unless there are a
+                lot of commissions active, I am busy, or the commission is
+                extra difficult.</p>
+            <p>The payrate will not change for active commissions, once the
+                price is set, it will not increase without consulting you.</p>
+            <!--
+            <p>
+                I charge an extra <b>&#163;30</b> if you wish
+                for me to NOT use QLib (unless the mod is small).
                 <br>
-                
-                <p><b>You cancel commission:</b></p>
-                <p>
-                    If you cancel the commission, I will consult with you on the
-                    amount of work I have put in, I get to keep the percentage of
-                    the payments we agreed on and the code in the current state is
-                    released to you.
-                </p>
-                <p>
-                    If, on the other hand, we did not manage to agree on the
-                    percentage, I have the right to retain any payments that have
-                    been completed so far as well as the rights to the entire code
-                    will remain with me.
-                </p>
-                <p><b>Higher chances are that we will agree on something,
-                I am not that scary.</b></p>
-            </div>
-            
-            <div>
-                <h3>Code Rights</h3>
-                <p>
-                    The code will remain closed-source under my rights
-                    <b>UNTIL</b> the commission has been completed and
-                    the all the payments have been made.<br>
-                    At that point the project is to be made
-                    <b>(AND REMAINED)</b> open-source and all rights
-                    are transfered to you.
-                </p>
-            </div>
-            <br>
+                Consult me if you wish to not use QLib and I will let you know if I would charge you.
+            </p>
+            -->
         </div>
-        
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>Project 1</p>
-      </div>
-      <div class="well">
-        <p>Project 2</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<footer class="container-fluid" style="height: 50px">
+        <div>
+            <h3>Worktime</h3>
+            <p>Worktime is <b>NOT</b> the ETA for how long the project will take.
+                This is an estimation of the total raw hours that I will have
+                put in order to complete the project.</p>
+            <p>I will use this estimation with the payrate to calculate the
+                final cost of the commission.</p>
+            <p>I will work out an estimation and let you know about the final
+                cost before the commission begins.</p>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="page-header">Charge Methods</h2>
+        <p><b>All-In:</b> You are weird and you decide to pay me everything at once.</p>
+        <p><b>50/50:</b> The payments are split 50/50, first at the very start of the project,
+            and last at the very end of the project.</p>
+        <p><b>Milestones:</b> We establish milestones for the features requested, and you pay
+            me the established amount before the start of the next milestone.</p>
+    </div>
+
+    <div>
+        <h2 class="page-header">Refunds and Code Rights</h2>
+        <div>
+            <h3>Refunds</h3>
+            <p><b>I cancel commission:</b></p>
+            <p>If I cancel the commission, all the payments that were made so
+                far will be refunded in full, and the code will remain with me
+                with full permissions belonging to me.</p>
+            <p>If by any chance you want to own the currently written code, then
+                we will consult on the percentage of that payment which I will
+                keep, and the code in the current state is released to you,
+                as long as it stays open-source.</p>
+            <br>
+
+            <p><b>You cancel commission:</b></p>
+            <p>If you cancel the commission, I will consult with you on the
+                amount of work I have put in, I get to keep the percentage of
+                the payments we agreed on and the code in the current state is
+                released to you.</p>
+            <p>If, on the other hand, we did not manage to agree on the
+                percentage, I have the right to retain any payments that have
+                been completed so far as well as the rights to the entire code
+                will remain with me.</p>
+            <p><b>Higher chances are that we will agree on something,
+                I am not that scary.</b></p>
+        </div>
+
+        <div>
+            <h3>Code Rights</h3>
+            <p>The code will remain under my rights
+                <b>UNTIL</b> the commission has been completed and
+                the all the payments have been made.<br>
+                At that point the project is to be made
+                <b>(AND REMAINED)</b> open-source and all rights
+                are transferred to you.</p>
+        </div>
+        <br>
+    </div>
+
+</div>
+<footer class="container-fluid">
     <a href="https://github.com/Quarris/quarris.github.io">© 2020 Quarris</a>
 </footer>
-
 </body>
 </html>

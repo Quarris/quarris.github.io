@@ -1,118 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Quarris' Little Corner</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 550px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-      width: 100%;
-      position: fixed;
-      bottom: 0
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
+    <title>Quarris' Little Corner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.html">Logo</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class=""><a href="projects.html">Projects</a></li>
+                <li><a href="commissions.html">Commissions</a></li>
+                <li class="disabled"><a>About</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="navigation">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li class="disabled"><a>Projects</a></li>
-        <li><a href="commissions.html">Commissions</a></li>
-        <li class="disabled"><a>About</a></li>
-      </ul>
-    </div>
-  </div>
 </nav>
-  
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="https://www.twitch.tv/quarris">Twitch</a></p>
-      <p><a href="https://www.twitter.com/quarris123">Twitter</a></p>
-      <p><a href="https://www.youtube.com/user/MrQuarris">Youtube</a></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Welcome to my little corner!</h1>
-      <p></p>
-      <hr>
-      <h3>Hey!</h3>
-      <p>I am Quarris, welcome to my website! Feel free to snoop around the place.</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="text-center">
-          <p>This site is under construction.</p>
-          <p>Things will change over time.</p>
-      </div>
-      <br>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>Project 1</p>
-      </div>
-      <div class="well">
-        <p>Project 2</p>
-      </div>
-    </div>
-  </div>
-</div>
 
+<div class="container text-left rounded" id="main">
+    <h1 class="page-header text-center">Hello World!</h1>
+    <p>Welcome to my little corner!</p>
+    <br>
+    <p>Have a snoop around the place if you wish</p>
+    <br>
+    <p>I'm not sure what more you want from me here so have some lorem ipsum:</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam malesuada est non bibendum. In aliquet arcu nec velit gravida, et bibendum purus volutpat. Nam auctor semper leo ac ultricies. Ut erat eros, dignissim in iaculis quis, auctor ut felis. Vestibulum massa dui, consequat a dui vitae, commodo posuere eros. Donec condimentum lectus tortor. Donec blandit cursus aliquet. Nam fringilla porttitor purus, a vulputate lorem imperdiet nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla pulvinar augue in dictum. Cras pharetra enim est, et fringilla lectus consequat non. Donec sit amet orci eros. In consequat imperdiet arcu, sed rutrum neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean neque ligula, ultrices consectetur consequat id, efficitur eget lectus. Proin quis mauris et sapien bibendum mattis in a est.</p>
+</div>
 <footer class="container-fluid">
     <a href="https://github.com/Quarris/quarris.github.io">© 2020 Quarris</a>
 </footer>
-
 </body>
 </html>
