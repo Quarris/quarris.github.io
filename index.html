@@ -24,22 +24,37 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li class=""><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="commissions.html">Commissions</a></li>
-                <li class="disabled"><a>About</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="container text-left rounded" id="main">
-    <h1 class="page-header text-center">Hello World!</h1>
-    <p>Welcome to my little corner!</p>
+    <h1 class="page-header text-center" id="intro">Hey There</h1>
+    <script>
+        var greetings = [
+            "Hello world!",
+            "Greetings!",
+            "Stay a while and listen!",
+            "Howdy.",
+            "Hey!",
+            "Hello there.",
+            "Good timezone to you!"
+        ];
+        document.getElementById("intro").innerText = greetings[Math.floor(Math.random() * greetings.length)]
+    </script>
+    <p>Welcome to my little website!</p>
+    <p>My name is Tom and I am a Computer Science Graduate interested in programming and game development.</p>
     <br>
-    <p>Have a snoop around the place if you wish</p>
-    <br>
-    <p>I'm not sure what more you want from me here so have some lorem ipsum:</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam malesuada est non bibendum. In aliquet arcu nec velit gravida, et bibendum purus volutpat. Nam auctor semper leo ac ultricies. Ut erat eros, dignissim in iaculis quis, auctor ut felis. Vestibulum massa dui, consequat a dui vitae, commodo posuere eros. Donec condimentum lectus tortor. Donec blandit cursus aliquet. Nam fringilla porttitor purus, a vulputate lorem imperdiet nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla pulvinar augue in dictum. Cras pharetra enim est, et fringilla lectus consequat non. Donec sit amet orci eros. In consequat imperdiet arcu, sed rutrum neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean neque ligula, ultrices consectetur consequat id, efficitur eget lectus. Proin quis mauris et sapien bibendum mattis in a est.</p>
+    <h3>Projects</h3>
+    <p>Check out my <a href="projects.html">projects</a> to see what I do and if you have any ideas feel free to let me know.</p>
+    <h3>Commissions</h3>
+    <p>If you have an idea for a Minecraft mod that you would like to see realised, check out my <a href="commissions.html">commissions</a> page and I might be able to make it for you!</p>
+    <h3>About Me</h3>
+    <p>If you want to find out more info about me, what I do and how to contact me, then check out the <a href="about.html">about</a> section</p>
 </div>
 <footer class="container-fluid">
     <a href="https://github.com/Quarris/quarris.github.io">© 2020 Quarris</a>
