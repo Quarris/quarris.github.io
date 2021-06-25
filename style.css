@@ -20,6 +20,15 @@ footer {
     background-color: #fff;
 }
 
+.navbar-brand {
+    padding: 5px 15px 0px 15px;
+}
+
+#logo {
+    border-radius: 25%;
+    width: 40px;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
