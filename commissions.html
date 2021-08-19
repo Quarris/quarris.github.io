@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Quarris' Little Corner</title>
     <meta charset="utf-8">
@@ -9,41 +10,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Logo</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo" src="img/logo.png" alt="Website Logo" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="active"><a href="commissions.html">Commissions</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="navigation">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li class="active"><a href="commissions.html">Commissions</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container text-left rounded" id="main">
+    <div class="container text-left rounded" id="main">
 
-    <div id="intro">
-        <h2 class="page-header">Modding Commissions</h2>
-        <p><b>Type:</b> Forge Mod Loader (FML)</p>
-        <p><b>Minecraft Version:</b> 1.16.5 (Ask for older versions)</p>
-        <p><b>Cost:</b> &#163;15 per hour of work time</p>
-        <p><b>Work Time:</b> Estimated amount of time spent writing the mod (used for calculating the final cost)</p>
-        <p><b>Payment Method:</b> Paypal</p>
-        <p><b>Source Code:</b> To be made and remain open-source upon release (GPL3)</p>
-        <p><b>Resources:</b> I am not responsible for textures/models required for the commission</p>
-        <!--
+        <div id="intro">
+            <h2 class="page-header">Modding Commissions</h2>
+            <p><b>Type:</b> Forge Mod Loader (FML)</p>
+            <p><b>Minecraft Version:</b> 1.16.5 (Ask for older versions)</p>
+            <p><b>Cost:</b> &#163;15 per hour of work time</p>
+            <p><b>Work Time:</b> Estimated amount of time spent writing the mod (used for calculating the final cost)
+            </p>
+            <p><b>Payment Method:</b> Paypal</p>
+            <p><b>Source Code:</b> To be made and remain open-source upon release (GPL3)</p>
+            <p><b>Resources:</b> I am not responsible for textures/models required for the commission</p>
+            <!--
         <p><b>Dependencies:</b></p>
         <ul>
             <li>The commission will have to contain the QLib dependency (1.15.2+) which is a library mod I am developing.</li>
@@ -51,44 +56,50 @@
             <li>Ask about the exclusion of QLib and I will provide the details</li>
         </ul>
         -->
-    </div>
-    <br>
-    <div>
-        <h2 class="page-header">Commission Requirements</h2>
-        <p>I write <b>Forge</b> Mods for the latest version of moddable Minecraft in a released stage.</p>
-        <p>If you would like an earlier version then feel free to ask, however depending on the size of the mod I may
-            refuse or charge extra.
-        <p>I am not responsible for creating or updating any textures and/or models required for the commission. I am not an artist/modelerer and any textures/models I make are purely for development purposes, which may be used in the release if you wish.</p>
-        <!--
+        </div>
+        <br>
+        <div>
+            <h2 class="page-header">Commission Requirements</h2>
+            <p>I write <b>Forge</b> Mods for the latest version of moddable Minecraft in a released stage.</p>
+            <p>If you would like an earlier version then feel free to ask, however depending on the size of the mod I
+                may
+                refuse or charge extra.
+            <p>I am not responsible for creating or updating any textures and/or models required for the commission. I
+                am not an artist/modelerer and any textures/models I make are purely for development purposes, which may
+                be used in the release if you wish.</p>
+            <!--
         <p>I create mods using QLib. It is a library mod I am developing for 1.15.2+ which allows me to write mods easier. Exclusion of QLib will come at an extra cost of &#163;30
             I may choose not to include QLib if the commission is small enough or below 1.15.2+</p>
             -->
-    </div>
+        </div>
 
-    <div>
-        <h2 class="page-header">Maintains and Updates</h2>
-        <p>Once the commission is completed, I will continue to provide bug fixes for free for 6 months after release,
-            and then until the latest moddable minecraft version updates.</p>
-        <p>Any additional features will be at an extra charge based on the time to add the feature (as if it was already
-            part of the commission)</p>
-        <p>Minecraft Version ports will be at an extra charge based on the amount of work time needed to port the
-            mod.
-            <b>In rare cases this could mean rewriting the entire mod.</b></p>
-    </div>
-
-    <div>
-        <h2 class="page-header">Worktime and Payrate</h2>
         <div>
-            <h3>Payrate</h3>
-            <p>The payrate is how much I charge per hour of work time.</p>
-            <p>My base payrate is <b>&#163;15</b> per hour,
-                that's about <b>19&#36;-21&#36;</b> per hour.</p>
-            <p>I will use this rate for most of the times unless there are a
-                lot of commissions active, I am busy, or the commission is
-                extra difficult.</p>
-            <p>The payrate will not change for active commissions, once the
-                price is set, it will not increase without consulting you.</p>
-            <!--
+            <h2 class="page-header">Maintains and Updates</h2>
+            <p>Once the commission is completed, I will continue to provide bug fixes for free for 6 months after
+                release,
+                and then until the latest moddable minecraft version updates.</p>
+            <p>Any additional features will be at an extra charge based on the time to add the feature (as if it was
+                already
+                part of the commission)</p>
+            <p>Minecraft Version ports will be at an extra charge based on the amount of work time needed to port the
+                mod.
+                <b>In rare cases this could mean rewriting the entire mod.</b>
+            </p>
+        </div>
+
+        <div>
+            <h2 class="page-header">Worktime and Payrate</h2>
+            <div>
+                <h3>Payrate</h3>
+                <p>The payrate is how much I charge per hour of work time.</p>
+                <p>My base payrate is <b>&#163;15</b> per hour,
+                    that's about <b>19&#36;-21&#36;</b> per hour.</p>
+                <p>I will use this rate for most of the times unless there are a
+                    lot of commissions active, I am busy, or the commission is
+                    extra difficult.</p>
+                <p>The payrate will not change for active commissions, once the
+                    price is set, it will not increase without consulting you.</p>
+                <!--
             <p>
                 I charge an extra <b>&#163;30</b> if you wish
                 for me to NOT use QLib (unless the mod is small).
@@ -96,66 +107,67 @@
                 Consult me if you wish to not use QLib and I will let you know if I would charge you.
             </p>
             -->
+            </div>
+
+            <div>
+                <h3>Worktime</h3>
+                <p>Worktime is <b>NOT</b> the ETA for how long the project will take.
+                    This is an estimation of the total raw hours that I will have
+                    put in order to complete the project.</p>
+                <p>I will use this estimation with the payrate to calculate the
+                    final cost of the commission.</p>
+                <p>I will work out an estimation and let you know about the final
+                    cost before the commission begins.</p>
+            </div>
         </div>
 
         <div>
-            <h3>Worktime</h3>
-            <p>Worktime is <b>NOT</b> the ETA for how long the project will take.
-                This is an estimation of the total raw hours that I will have
-                put in order to complete the project.</p>
-            <p>I will use this estimation with the payrate to calculate the
-                final cost of the commission.</p>
-            <p>I will work out an estimation and let you know about the final
-                cost before the commission begins.</p>
+            <h2 class="page-header">Charge Methods</h2>
+            <p><b>All-In:</b> You are weird and you decide to pay me everything at once.</p>
+            <p><b>50/50:</b> The payments are split 50/50, first at the very start of the project,
+                and last at the very end of the project.</p>
+            <p><b>Milestones:</b> We establish milestones for the features requested, and you pay
+                me the established amount before the start of the next milestone.</p>
         </div>
-    </div>
 
-    <div>
-        <h2 class="page-header">Charge Methods</h2>
-        <p><b>All-In:</b> You are weird and you decide to pay me everything at once.</p>
-        <p><b>50/50:</b> The payments are split 50/50, first at the very start of the project,
-            and last at the very end of the project.</p>
-        <p><b>Milestones:</b> We establish milestones for the features requested, and you pay
-            me the established amount before the start of the next milestone.</p>
-    </div>
-
-    <div>
-        <h2 class="page-header">Refunds and Code Rights</h2>
         <div>
-            <h3>Refunds</h3>
-            <p><b>I cancel commission:</b></p>
-            <p>If I cancel the commission, all the payments that were made so
-                far will be refunded in full, and the code will remain with me
-                with full permissions belonging to me.</p>
-            <p>If by any chance you want to own the current build, then
-                we will consult on the percentage of that payment which I will
-                keep, and the most recent working build is released to you,
-                but the code still remains with me.</p>
+            <h2 class="page-header">Refunds and Code Rights</h2>
+            <div>
+                <h3>Refunds</h3>
+                <p><b>I cancel commission:</b></p>
+                <p>If I cancel the commission, all the payments that were made so
+                    far will be refunded in full, and the code will remain with me
+                    with full permissions belonging to me.</p>
+                <p>If by any chance you want to own the current build, then
+                    we will consult on the percentage of that payment which I will
+                    keep, and the most recent working build is released to you,
+                    but the code still remains with me.</p>
+                <br>
+
+                <p><b>You cancel commission:</b></p>
+                <p>If you cancel the commission, I will consult with you on the
+                    amount of work I have put in, I get to keep the percentage of
+                    the payments we agreed on and the most recent working build is
+                    released to you, while the code still remains with me.</p>
+                <p>If, on the other hand, we did not manage to agree on the
+                    percentage, I have the right to retain any payments that have
+                    been completed so far as well as the rights to the entire code
+                    will remain with me.</p>
+                <p><b>Higher chances are that we will agree on something,
+                        I am not that scary.</b></p>
+            </div>
+
+            <div>
+                <h3>Code Rights</h3>
+                <p>The code will remain under my rights under GPLv3 and you get the product.<br>
+            </div>
             <br>
-
-            <p><b>You cancel commission:</b></p>
-            <p>If you cancel the commission, I will consult with you on the
-                amount of work I have put in, I get to keep the percentage of
-                the payments we agreed on and the most recent working build is
-                released to you, while the code still remains with me.</p>
-            <p>If, on the other hand, we did not manage to agree on the
-                percentage, I have the right to retain any payments that have
-                been completed so far as well as the rights to the entire code
-                will remain with me.</p>
-            <p><b>Higher chances are that we will agree on something,
-                I am not that scary.</b></p>
         </div>
 
-        <div>
-            <h3>Code Rights</h3>
-            <p>The code will remain under my rights under GPLv3 and you get the product.<br>
-        </div>
-        <br>
     </div>
-
-</div>
-<footer class="container-fluid">
-    <a href="https://github.com/Quarris/quarris.github.io">© 2020 Quarris</a>
-</footer>
+    <footer class="container-fluid">
+        <a href="https://github.com/Quarris/quarris.github.io">© 2020-2021 Quarris</a>
+    </footer>
 </body>
+
 </html>

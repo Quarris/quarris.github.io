@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Quarris' Little Corner</title>
     <meta charset="utf-8">
@@ -9,52 +10,64 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Logo</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo" src="img/logo.png" alt="Website Logo" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="commissions.html">Commissions</a></li>
+                    <li class="active"><a href="about.html">About</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="navigation">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="commissions.html">Commissions</a></li>
-                <li class="active"><a href="about.html">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container text-left rounded" id="main">
-    <h2 class="page-header">About Me</h2>
-    <p>My name is Tom and I am <span id="age">you really aren't supposed to see this. JavaScript may be broken if you do, please don't be mean to me</span> years old. I graduated as a Bachelors of Computer Science and I would like to be involved in the gaming industry, eventually looking to be a game developer. I like tinkering with around with game dev however recently I've mostly been focused on creating mods for Minecraft, which has helped develop my understanding of codebases and APIs.</p>
-    <p>I really enjoy knowledge and sharing it with others. Though I do not classify myself as a good teacher by any means, I would like to create some posts to help people learn or understand concepts in a way that helped me understand them. This might include Object Oriented programming such as Java or C#, how to make Minecraft mods or even what is RAM and CPU, how do they work and what do these numbers mean? These are all things that are most likely going to end up on this website in the future.</p>
-    <script>
-        // Replace age
-        var bday = new Date(97, 11, 2);
-        var today = new Date();
-        var age = today.getFullYear() - bday.getFullYear();
-        if (today.getMonth() < bday.getMonth() || (today.getMonth() === bday.getMonth()) && (today.getDate() < bday.getDate())) {
-            age--;
-        }
-        document.getElementById("age").innerText = age;
-    </script>
-    <h2 class="page-header">Contact</h2>
-    <p>Best way to contact me is through Discord, my username is <b>Quarris#8049</b>.</p>
-    <p>If this is a problem for you then you can also contact me on my spare email <b>quarris@live.co.uk</b>.</p>
-    <h2 class="page-header">Social</h2>
-    <p><a href="https://twitter.com/quarris123">Twitter</a></p>
-    <p><a href="https://www.twitch.tv/quarris">Twitch</a></p>
-</div>
-<footer class="container-fluid">
-    <a href="https://github.com/Quarris/quarris.github.io">© 2020 Quarris</a>
-</footer>
+    <div class="container text-left rounded" id="main">
+        <h2 class="page-header">About Me</h2>
+        <p>My name is Tom and I am <span id="age">you really aren't supposed to see this. JavaScript may be broken if
+                you do, please don't be mean to me</span> years old. I graduated as a Bachelors of Computer Science and
+            I would like to be involved in the gaming industry, eventually looking to be a game developer. I like
+            tinkering with around with game dev however recently I've mostly been focused on creating mods for
+            Minecraft, which has helped develop my understanding of codebases and APIs.</p>
+        <p>I really enjoy knowledge and sharing it with others. Though I do not classify myself as a good teacher by any
+            means, I would like to create some posts to help people learn or understand concepts in a way that helped me
+            understand them. This might include Object Oriented programming such as Java or C#, how to make Minecraft
+            mods or even what is RAM and CPU, how do they work and what do these numbers mean? These are all things that
+            are most likely going to end up on this website in the future.</p>
+        <script>
+            // Replace age
+            var bday = new Date(97, 11, 2);
+            var today = new Date();
+            var age = today.getFullYear() - bday.getFullYear();
+            if (today.getMonth() < bday.getMonth() || (today.getMonth() === bday.getMonth()) && (today.getDate() < bday.getDate())) {
+                age--;
+            }
+            document.getElementById("age").innerText = age;
+        </script>
+        <h2 class="page-header">Contact</h2>
+        <p>Best way to contact me is through Discord, my username is <b>Quarris#8049</b>.</p>
+        <p>If this is a problem for you then you can also contact me on my spare email <b>quarris@live.co.uk</b>.</p>
+        <h2 class="page-header">Social</h2>
+        <p><a href="https://twitter.com/quarris123">Twitter</a></p>
+        <p><a href="https://www.twitch.tv/quarris">Twitch</a></p>
+    </div>
+    <footer class="container-fluid">
+        <a href="https://github.com/Quarris/quarris.github.io">© 2020-2021 Quarris</a>
+    </footer>
 </body>
+
 </html>
