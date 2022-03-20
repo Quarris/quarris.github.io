@@ -160,7 +160,7 @@ function addProject(element, project) {
         <p class="lead">${project.description}</p>
         <hr>
         <p>${project.details}</p>
-        ${project.links.map(link => getProjectLinkHtml(link))}
+        ${project.links.map(link => getProjectLinkHtml(link)).join(" ")}
     </div>
     `
 }
