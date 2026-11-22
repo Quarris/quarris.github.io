@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PdfEditor from '../apps/pdf-editor/PdfEditor';
+---
+
+<Layout
+	title="PDF Editor · Quarris"
+	description="Merge PDFs, fill in forms, add text and drawings. Runs entirely in your browser."
+>
+	<PdfEditor client:only="react" />
+</Layout>
