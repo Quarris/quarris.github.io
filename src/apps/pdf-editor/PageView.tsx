@@ -27,8 +27,8 @@ export function PageView({ page, number }: { page: PageEntry; number: number }) 
 		const [x, y] = point(e);
 		if (tool === 'text') {
 			e.preventDefault();
-			const { size, color } = editor.textStyle;
-			const item = { id: uid(), kind: 'text' as const, pageId: page.id, x, y: y - (size * LINE_HEIGHT) / 2, text: '', size, color };
+			const { size } = editor.textStyle;
+			const item = { id: uid(), kind: 'text' as const, pageId: page.id, x, y: y - (size * LINE_HEIGHT) / 2, text: '', ...editor.textStyle };
 			return editor.startEditing(item, true);
 		}
 		e.currentTarget.setPointerCapture(e.pointerId);

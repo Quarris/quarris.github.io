@@ -1,4 +1,5 @@
 import type { PDFDocumentProxy, PDFPageProxy } from 'pdfjs-dist';
+import type { FontId } from './fonts';
 
 export const LINE_HEIGHT = 1.2;
 
@@ -53,6 +54,7 @@ export interface TextItem extends ItemBase {
 	kind: 'text';
 	text: string;
 	size: number;
+	font: FontId;
 }
 
 export interface InkItem extends ItemBase {

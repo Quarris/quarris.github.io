@@ -1,5 +1,6 @@
 import { MousePointer2, PenLine, Redo2, Trash, Type, Undo2, type LucideIcon } from 'lucide-react';
 import { useEditor, type InkStyle, type TextStyle } from './context';
+import { FONTS, fontFamily, fontOf, type FontId } from './fonts';
 import type { Tool } from './types';
 
 const TOOLS: { tool: Tool; label: string; key: string; Icon: LucideIcon }[] = [
@@ -70,16 +71,31 @@ export function EditBar({ disabled, canUndo, canRedo, onTool, setTextStyle, setI
 						/>
 					</label>
 					{kind === 'text' ? (
-						<label className="control" title="Font size">
-							<input
-								type="number"
-								min={4}
-								max={200}
-								value={text.size}
-								onChange={(e) => e.target.valueAsNumber > 0 && updateText({ size: e.target.valueAsNumber })}
-							/>
-							pt
-						</label>
+						<>
+							<select
+								className="font-select"
+								title="Font"
+								value={fontOf(text.font)}
+								style={{ fontFamily: fontFamily(text.font) }}
+								onChange={(e) => updateText({ font: e.target.value as FontId })}
+							>
+								{Object.entries(FONTS).map(([id, { label }]) => (
+									<option key={id} value={id} style={{ fontFamily: fontFamily(id as FontId) }}>
+										{label}
+									</option>
+								))}
+							</select>
+							<label className="control" title="Font size">
+								<input
+									type="number"
+									min={4}
+									max={200}
+									value={text.size}
+									onChange={(e) => e.target.valueAsNumber > 0 && updateText({ size: e.target.valueAsNumber })}
+								/>
+								pt
+							</label>
+						</>
 					) : (
 						<label className="control" title="Line width">
 							<input

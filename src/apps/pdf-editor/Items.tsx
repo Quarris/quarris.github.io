@@ -1,5 +1,6 @@
 import { useRef, useState, type PointerEvent } from 'react';
 import { useEditor } from './context';
+import { fontFamily } from './fonts';
 import { LINE_HEIGHT, type InkItem, type Item, type TextItem } from './types';
 
 export const toPath = (s: number[]) => (s.length === 2 ? `M${s[0]} ${s[1]}h0` : `M${s[0]} ${s[1]}L${s.slice(2).join(' ')}`);
@@ -42,7 +43,7 @@ export function TextItemView({ item }: { item: TextItem }) {
 	return (
 		<div
 			className={`item text${selectedId === item.id ? ' selected' : ''}`}
-			style={{ left: x * zoom, top: y * zoom, fontSize: item.size * zoom, color: item.color }}
+			style={{ left: x * zoom, top: y * zoom, fontSize: item.size * zoom, fontFamily: fontFamily(item.font), color: item.color }}
 			onDoubleClick={() => startEditing(item, false)}
 			{...handlers}
 		>
@@ -77,9 +78,10 @@ export function InkItemView({ item }: { item: InkItem }) {
 
 let measureContext: CanvasRenderingContext2D | null = null;
 
-function measure(text: string, px: number) {
+function measure(text: string, px: number, family: string) {
 	measureContext ??= document.createElement('canvas').getContext('2d')!;
-	measureContext.font = `${px}px PdfSans, sans-serif`;
+	measureContext.font = `${px}px ${family}`;
+	measureContext.fontKerning = 'none';
 	return measureContext.measureText(text).width;
 }
 
@@ -87,6 +89,7 @@ export function TextEditor({ item }: { item: TextItem }) {
 	const { zoom, setEditingText, commitEditing } = useEditor();
 	const lines = item.text.split('\n');
 	const px = item.size * zoom;
+	const family = fontFamily(item.font);
 	return (
 		<textarea
 			className="text-editor"
@@ -97,8 +100,9 @@ export function TextEditor({ item }: { item: TextItem }) {
 				left: item.x * zoom,
 				top: item.y * zoom,
 				fontSize: px,
+				fontFamily: family,
 				color: item.color,
-				width: Math.max(...lines.map((l) => measure(l, px))) + px,
+				width: Math.max(...lines.map((l) => measure(l, px, family))) + px,
 				height: lines.length * px * LINE_HEIGHT,
 			}}
 			onChange={(e) => setEditingText(e.target.value)}

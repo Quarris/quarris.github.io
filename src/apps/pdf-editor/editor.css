@@ -242,6 +242,16 @@
 	font: inherit;
 }
 
+.font-select {
+	height: 28px;
+	padding: 0 6px;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	background: var(--bg);
+	color: var(--fg);
+	font-size: 15px;
+}
+
 .control input[type='range'] {
 	width: 90px;
 	accent-color: var(--accent);
@@ -516,9 +526,10 @@
 	position: absolute;
 	margin: 0;
 	padding: 0;
-	font-family: PdfSans, sans-serif;
 	line-height: 1.2;
 	white-space: pre;
+	font-kerning: none;
+	font-variant-ligatures: none;
 }
 
 .text {

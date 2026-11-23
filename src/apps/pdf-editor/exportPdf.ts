@@ -1,5 +1,4 @@
 import fontkit from '@pdf-lib/fontkit';
-import fontUrl from '@expo-google-fonts/noto-sans/400Regular/NotoSans_400Regular.ttf?url';
 import {
 	degrees,
 	LineCapStyle,
@@ -30,21 +29,28 @@ import {
 	type PDFPage,
 } from 'pdf-lib';
 import type { PDFPageProxy } from 'pdfjs-dist';
+import { fontOf, loadFont, verticalMetrics, type FontId } from './fonts';
 import { LINE_HEIGHT, type Doc, type FieldValue, type InkItem, type Item, type Source, type TextItem } from './types';
 
 type ToPdf = (x: number, y: number) => [number, number];
+type EmbeddedFont = { font: PDFFont; ascent: number; descent: number };
+type Fonts = Map<FontId, EmbeddedFont>;
 
 const hasFields = (source: Source) => source.fields.some((f) => f.length > 0);
 
 const toRgb = (hex: string) => rgb(parseInt(hex.slice(1, 3), 16) / 255, parseInt(hex.slice(3, 5), 16) / 255, parseInt(hex.slice(5, 7), 16) / 255);
 
-let fontBytes: Promise<ArrayBuffer> | undefined;
-const loadFont = () => (fontBytes ??= fetch(fontUrl).then((r) => r.arrayBuffer()));
+// pdf-lib only writes widths for glyphs in the font's cmap, so substituted glyphs (ligatures, alternates) would get the
+// 1000-unit default. Kerning is off too since drawText ignores it; the editor CSS matches both.
+const embed = async (pdf: PDFDocument, id: FontId) =>
+	pdf.embedFont(await loadFont(id), { features: { liga: false, clig: false, calt: false, kern: false } });
 
 export async function exportPdf(doc: Doc, sources: Map<string, Source>) {
 	const out = await PDFDocument.create();
 	out.registerFontkit(fontkit);
-	const font = doc.items.some((i) => i.kind === 'text') ? await out.embedFont(await loadFont()) : undefined;
+	const fonts: Fonts = new Map();
+	const fontIds = new Set(doc.items.flatMap((i) => (i.kind === 'text' ? [fontOf(i.font)] : [])));
+	for (const id of fontIds) fonts.set(id, { font: await embed(out, id), ...(await verticalMetrics(id)) });
 
 	const used = [...new Set(doc.pages.map((p) => p.sourceId))].map((id) => sources.get(id)!);
 	const keepForms = used.filter(hasFields).length === 1;
@@ -62,7 +68,7 @@ export async function exportPdf(doc: Doc, sources: Map<string, Source>) {
 	for (const entry of doc.pages) {
 		const page = out.addPage(copied.get(entry.id)!);
 		const items = doc.items.filter((i) => i.pageId === entry.id);
-		if (items.length) drawItems(out, page, items, sources.get(entry.sourceId)!.pages[entry.index], font);
+		if (items.length) drawItems(out, page, items, sources.get(entry.sourceId)!.pages[entry.index], fonts);
 	}
 
 	if (formDoc) registerFields(out, formDoc);
@@ -78,7 +84,7 @@ async function prepare(source: Source, values: Doc['fields'], flatten: boolean) 
 	pdf.registerFontkit(fontkit);
 	const form = pdf.getForm();
 	for (const [key, value] of changed) setField(form, key.slice(prefix.length), value, source);
-	form.updateFieldAppearances(await pdf.embedFont(await loadFont()));
+	form.updateFieldAppearances(await embed(pdf, 'sans'));
 	if (flatten) form.flatten({ updateFieldAppearances: false });
 	// Embedded fonts are only written out on save, so round-trip before copying pages that use one.
 	return PDFDocument.load(await pdf.save({ updateFieldAppearances: false }));
@@ -98,21 +104,22 @@ function setField(form: PDFForm, name: string, value: FieldValue, source: Source
 	}
 }
 
-function drawItems(out: PDFDocument, page: PDFPage, items: Item[], view: PDFPageProxy, font?: PDFFont) {
+function drawItems(out: PDFDocument, page: PDFPage, items: Item[], view: PDFPageProxy, fonts: Fonts) {
 	const viewport = view.getViewport({ scale: 1 });
 	const toPdf: ToPdf = (x, y) => viewport.convertToPdfPoint(x, y) as [number, number];
 	const stream = (op: PDFOperator) => out.context.register(out.context.contentStream([op]));
 	// Wrap the original content in q/Q so any graphics state it leaves behind can't distort our drawing.
 	page.node.wrapContentStreams(stream(pushGraphicsState()), stream(popGraphicsState()));
 	for (const item of items) {
-		if (item.kind === 'text') drawText(page, item, font!, toPdf, viewport.rotation);
+		if (item.kind === 'text') drawText(page, item, fonts.get(fontOf(item.font))!, toPdf, viewport.rotation);
 		else drawInk(page, item, toPdf);
 	}
 }
 
-function drawText(page: PDFPage, item: TextItem, font: PDFFont, toPdf: ToPdf, rotation: number) {
+// Baseline from the browser's own metrics, so the text lands where the editor showed it.
+function drawText(page: PDFPage, item: TextItem, { font, ascent, descent }: EmbeddedFont, toPdf: ToPdf, rotation: number) {
 	const lineHeight = item.size * LINE_HEIGHT;
-	const baseline = (lineHeight - font.heightAtSize(item.size)) / 2 + font.heightAtSize(item.size, { descender: false });
+	const baseline = (lineHeight - (ascent + descent) * item.size) / 2 + ascent * item.size;
 	item.text.split('\n').forEach((line, i) => {
 		const [x, y] = toPdf(item.x, item.y + baseline + i * lineHeight);
 		page.drawText(line, { x, y, size: item.size, font, color: toRgb(item.color), rotate: degrees(rotation) });

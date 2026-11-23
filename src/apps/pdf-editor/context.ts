@@ -2,7 +2,7 @@ import { createContext, useContext, type Dispatch } from 'react';
 import type { Action } from './history';
 import type { Doc, InkItem, Source, TextItem, Tool } from './types';
 
-export type TextStyle = Pick<TextItem, 'size' | 'color'>;
+export type TextStyle = Pick<TextItem, 'size' | 'color' | 'font'>;
 export type InkStyle = Pick<InkItem, 'width' | 'color'>;
 
 export interface Editing {

@@ -1,8 +1,8 @@
-import fontUrl from '@expo-google-fonts/noto-sans/400Regular/NotoSans_400Regular.ttf?url';
 import { useEffect, useReducer, useRef, useState } from 'react';
-import { EditorContext, type EditorApi, type Editing } from './context';
+import { EditorContext, type EditorApi, type Editing, type TextStyle } from './context';
 import { canSaveToFolder, downloadImage, downloadImages, downloadPdf, downloadZip, pageDoc, saveImagesToFolder } from './download';
 import { EditBar } from './EditBar';
+import { registerFonts } from './fonts';
 import { initialHistory, reducer } from './history';
 import { Menu } from './Menu';
 import { NameDialog } from './NameDialog';
@@ -33,7 +33,7 @@ export default function PdfEditor() {
 	const [tool, setTool] = useState<Tool>('select');
 	const [selectedId, select] = useState<string | null>(null);
 	const [editing, setEditing] = useState<Editing | null>(null);
-	const [textStyle, setTextStyle] = useState({ size: 14, color: '#111111' });
+	const [textStyle, setTextStyle] = useState<TextStyle>({ size: 14, color: '#111111', font: 'sans' });
 	const [inkStyle, setInkStyle] = useState({ width: 2, color: '#1d4ed8' });
 	const [activeInkId, setActiveInkId] = useState<string | null>(null);
 	const [busy, setBusy] = useState(false);
@@ -79,9 +79,7 @@ export default function PdfEditor() {
 	};
 
 
-	useEffect(() => {
-		new FontFace('PdfSans', `url(${fontUrl})`).load().then((face) => document.fonts.add(face));
-	}, []);
+	useEffect(registerFonts, []);
 
 	useEffect(() => {
 		setBusy(true);
